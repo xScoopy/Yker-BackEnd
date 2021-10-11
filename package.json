@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/xScoopy/Yker-BackEnd/issues"
   },
-  "homepage": "https://github.com/xScoopy/Yker-BackEnd#readme"
+  "homepage": "https://github.com/xScoopy/Yker-BackEnd#readme",
+  "dependencies": {
+    "axios": "^0.22.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
+  }
 }
