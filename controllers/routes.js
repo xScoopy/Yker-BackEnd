@@ -13,6 +13,7 @@ router.get("/", (req, res) => {
 
 //route to retrieve orders
 router.get("/orders", (req, res) => {
+    let allOrders = {}
     //axios options
     const options = {
         method: "get", 
@@ -28,6 +29,29 @@ router.get("/orders", (req, res) => {
         res.setHeader("Access-Control-Allow-Origin", "*")
         res.json(response.data)
     })
+    .catch((err) => {
+        throw err
+    })
+    // axios(options)
+    // .then((response) => {
+    //     allOrders = {
+    //         ...allOrders,
+    //         ...response.data
+    //     }
+    //     let next_page = response.data["pagination"]["hasNextPage"]
+    //     while(next_page){
+    //         options["url"] = response.data["pagination"]["nextPageUrl"]
+    //         axios(options)
+    //         .then((nextPage) => {
+    //             next_page = nextPage.data["pagination"]["hasNextPage"]
+    //             console.log(next_page)
+    //             allOrders = {
+    //                 ...allOrders,
+    //                 ...nextPage.data
+    //             }
+    //         })
+    //     }
+    // })
     .catch((err) => {
         throw err
     })
