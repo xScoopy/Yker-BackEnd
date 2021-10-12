@@ -37,19 +37,23 @@ const getAllOrders = async () => {
   }
 };
 //route to retrieve orders
-router.get("/orders", async (req, res) => {
-  const allUrls = await getAllOrders();
-  res.json(allUrls)
+router.get("/orders", (req, res) => {
+//   const allUrls = await getAllOrders();
+//   res.json(allUrls)
 
   //axios options
-  // const options = {
-  //     method: "get",
-  //     url: process.env.orders_url,
-  //     headers: {
-  //         "Authorization": process.env.secret_token,
-  //         "User-Agent": "Yker-App"
-  //     }
-  // }
+  const options = {
+      method: "get",
+      url: process.env.orders_url,
+      headers: {
+          "Authorization": process.env.secret_token,
+          "User-Agent": "Yker-App"
+      }
+  }
+  axios(options)
+  .then((response) => {
+    res.json(response.data)
+  })
 
   // let lastUrl = []
   // while(options["url"] != null){
