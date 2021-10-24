@@ -1,5 +1,8 @@
 const express = require("express");
 const app = express();
+const bodyParser = require('body-parser')
+app.use(bodyParser.text({type:"*/*"}));
+// app.use(express.json())
 const cors = require("cors")
 
 const router = require("./controllers/index.js")
@@ -22,3 +25,5 @@ app.get("/", (req, res) => {
 app.listen(process.env.PORT || 3000, () => {
     console.log("Listening for requests")
 })
+
+module.exports = app
