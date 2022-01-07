@@ -1,3 +1,4 @@
+//initialize express server
 const express = require("express");
 const app = express();
 const bodyParser = require('body-parser')
@@ -22,6 +23,7 @@ app.get("/", (req, res) => {
     })
 })
 
+//Most important code on this page - allows server to stay running and listen to requests. 
 app.listen(process.env.PORT || 3000, () => {
     console.log("Listening for requests")
 })
